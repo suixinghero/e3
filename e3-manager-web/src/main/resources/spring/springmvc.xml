@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://code.alibabatech.com/schema/dubbo
+http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <context:component-scan base-package="org.e3.controller"></context:component-scan>
+
+
+    <!--视图解析器-->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--文件所在目录-->
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <!--文件后缀名-->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!--配置文件解析器，名字必须为multipartResolver-->
+    <!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>-->
+
+
+    <!--开启springmvc框架注解的支持conversion-service是自定义类型转换器生效-->
+    <mvc:annotation-driven ></mvc:annotation-driven>
+
+
+    <!--配置异常处理器-->
+    <!--<bean class="org.ssm_tts.util.SysExceptionResolver" id="sysExceptionResolver"></bean>-->
+
+
+    <!-- 引用dubbo服务 -->
+    <dubbo:application name="e3-manager-web"/>
+    <dubbo:registry protocol="zookeeper" address="47.93.25.239:2181"/>
+    <dubbo:reference interface="org.e3.service.ItemService" id="itemService" />
+
+</beans>
