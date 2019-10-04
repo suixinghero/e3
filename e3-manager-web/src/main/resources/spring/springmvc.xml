@@ -20,7 +20,7 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!--视图解析器-->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--文件所在目录-->
-        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
         <!--文件后缀名-->
         <property name="suffix" value=".jsp"></property>
     </bean>
@@ -31,6 +31,10 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!--开启springmvc框架注解的支持conversion-service是自定义类型转换器生效-->
     <mvc:annotation-driven ></mvc:annotation-driven>
+
+    <!--配置资源映射-->
+    <mvc:resources location="/js/" mapping="/js/**"/>
+    <mvc:resources location="/css/" mapping="/css/**"/>
 
 
     <!--配置异常处理器-->

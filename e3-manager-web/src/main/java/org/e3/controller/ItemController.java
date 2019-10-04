@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
+
+import java.util.Map;
 
 /**
  * @author xujin
@@ -28,4 +29,12 @@ public class ItemController {
        TbItem tbItem= itemService.getItemlById(itemId);
        return tbItem;
     }
+
+    @RequestMapping("/list")
+    @ResponseBody
+    public Map<String,Object> getItemList(Integer page,Integer rows){
+        Map<String,Object> map=itemService.getItemList(page,rows);
+        return  map;
+    }
+
 }

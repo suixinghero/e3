@@ -1,6 +1,10 @@
 package org.e3.service;
 
+import org.e3.common.pojo.EasyUIDataGridResult;
 import org.e3.pojo.TbItem;
+
+
+import java.util.Map;
 
 /**
  * @author xujin
@@ -15,4 +19,12 @@ public interface ItemService {
      * @return
      */
     public TbItem getItemlById(Long id);
+
+    /**
+     * 分页查询商品信息
+     * @param page 页数
+     * @param rows 一页有多少条数据
+     * @return
+     */
+    public Map<String,Object> getItemList(int page, int rows);
 }
