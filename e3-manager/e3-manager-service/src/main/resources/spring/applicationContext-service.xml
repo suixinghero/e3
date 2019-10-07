@@ -26,6 +26,6 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:protocol name="dubbo" port="20880" />
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="org.e3.service.ItemService" ref="itemService" timeout="60000"/>
-
+    <dubbo:service interface="org.e3.service.ItemCatService" ref="itemCatService" timeout="60000"/>
 
 </beans>

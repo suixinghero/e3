@@ -115,6 +115,9 @@
 			if(data.status == 200){
 				$.messager.alert('提示','新增商品成功!');
 			}
+			if(data.status == 500){
+                $.messager.alert('提示','新增商品失败!');
+			}
 		});
 	}
 	

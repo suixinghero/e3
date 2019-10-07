@@ -1,6 +1,7 @@
 package org.e3.service;
 
 import org.e3.common.pojo.EasyUIDataGridResult;
+import org.e3.common.util.E3Result;
 import org.e3.pojo.TbItem;
 
 
@@ -27,4 +28,12 @@ public interface ItemService {
      * @return
      */
     public Map<String,Object> getItemList(int page, int rows);
+
+    /**
+     * 添加商品和商品描述
+     * @param tbItem 商品
+     * @param desc  商品描述
+     * @return
+     */
+    public E3Result addItem(TbItem tbItem,String desc);
 }
