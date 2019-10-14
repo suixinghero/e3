@@ -48,5 +48,15 @@ http://www.springframework.org/schema/context/spring-context.xsd
         <property name="messageListener" ref="myMessageListener" />
     </bean>
 
+    <!-- 配置监听器 -->
+    <bean id="itemAddMessageListener" class="org.e3.search.message.ItemAddMessageListener" />
+
+    <!-- 消息监听容器 -->
+    <bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="topicDestination" />
+        <property name="messageListener" ref="itemAddMessageListener" />
+    </bean>
+
 
 </beans>

@@ -38,8 +38,6 @@ public class SearchController {
         modelAndView.addObject("page",page);
         modelAndView.addObject("itemList",searchResult.getSearchItemList());
         modelAndView.setViewName("search");
-        //异常测试
-        int i=1/0;
         return modelAndView;
     }
 }
