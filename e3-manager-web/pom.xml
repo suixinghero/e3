@@ -19,6 +19,16 @@
             <groupId>org.xujin</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <artifactId>e3-content-interface</artifactId>
+            <groupId>org.xujin</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <artifactId>e3-search-interface</artifactId>
+            <groupId>org.xujin</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!-- JSP相关 -->
         <dependency>
             <groupId>jstl</groupId>

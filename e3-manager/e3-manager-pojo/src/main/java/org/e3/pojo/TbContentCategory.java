@@ -6,6 +6,20 @@ import java.util.Date;
 public class TbContentCategory implements Serializable {
     private Long id;
 
+    @Override
+    public String toString() {
+        return "TbContentCategory{" +
+                "id=" + id +
+                ", parentId=" + parentId +
+                ", name='" + name + '\'' +
+                ", status=" + status +
+                ", sortOrder=" + sortOrder +
+                ", isParent=" + isParent +
+                ", created=" + created +
+                ", updated=" + updated +
+                '}';
+    }
+
     private Long parentId;
 
     private String name;

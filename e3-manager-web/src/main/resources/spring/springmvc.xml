@@ -51,4 +51,7 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:registry protocol="zookeeper" address="47.93.25.239:2181"/>
     <dubbo:reference interface="org.e3.service.ItemService" id="itemService" />
     <dubbo:reference interface="org.e3.service.ItemCatService" id="itemCatService" />
+    <dubbo:reference interface="org.e3.content.service.ContentCategoryService" id="contentCategoryService" />
+    <dubbo:reference interface="org.e3.content.service.ContentService" id="contentService" />
+    <dubbo:reference interface="org.e3.search.service.SearchItemService" id="searchItemService" />
 </beans>
